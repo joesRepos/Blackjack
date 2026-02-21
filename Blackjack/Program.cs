@@ -4,7 +4,15 @@ deck.Shuffle();
 Hand playerHand = new Hand();
 Hand dealerHand = new Hand();
 
+playerHand.AddCard(deck.Draw());
+playerHand.AddCard(deck.Draw());
+
+dealerHand.AddCard(deck.Draw());
+dealerHand.AddCard(deck.Draw());
+
 Console.WriteLine("Welcome to Blackjack!");
+Console.WriteLine("Your hand: " + playerHand);
+Console.WriteLine("Dealear's shows: " + dealerHand.Cards[0]);
 
 while (playerHand.GetValue() < 21)
 {
