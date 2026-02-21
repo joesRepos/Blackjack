@@ -19,7 +19,7 @@ while (playerHand.GetValue() < 21)
     Console.WriteLine("Stick or twist?");
     string input = Console.ReadLine().ToLower();
 
-    if (input == "EXIT")
+    if (input == "ezit")
     {
         break;
     }
