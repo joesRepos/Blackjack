@@ -19,9 +19,22 @@ while (playerHand.GetValue() < 21)
     Console.WriteLine("Stick or twist?");
     string input = Console.ReadLine().ToLower();
 
-    if (input == "ezit")
+    if (input == "exit")
     {
         break;
+    }
+    else if (input == "twist")
+    {
+        playerHand.AddCard(deck.Draw());
+        Console.WriteLine("Your hand: " + playerHand);
+    }
+    else if (input == "stick")
+    {
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Please enter only 'stick', 'twist', or 'exit");
     }
 }
 
