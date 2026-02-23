@@ -38,4 +38,22 @@ while (playerHand.GetValue() < 21)
     }
 }
 
+if (playerHand.GetValue() > 21)
+{
+    Console.WriteLine("You went over 21");
+    Console.WriteLine("Your hand: " + playerHand);
+}
+else if (playerHand.GetValue() > dealerHand.GetValue())
+{
+    Console.WriteLine("You won!");
+    Console.WriteLine("Your hand: " + playerHand);
+    Console.WriteLine("Dealer hand: " + dealerHand);
+}
+else
+{
+    Console.WriteLine("The dealer won");
+    Console.WriteLine("Your hand: " + playerHand);
+    Console.WriteLine("Dealer hand: " + dealerHand);
+}
+
 Console.WriteLine("Game Over.");
