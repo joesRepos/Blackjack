@@ -14,7 +14,7 @@ Console.WriteLine("Welcome to Blackjack!");
 Console.WriteLine("Your hand: " + playerHand);
 Console.WriteLine("Dealear's shows: " + dealerHand.Cards[0]);
 
-while (playerHand.GetValue() < 21)
+while (playerHand.GetValue() < 21 && dealerHand.GetValue() < 21)
 {
     Console.WriteLine("Stick or twist?");
     string input = Console.ReadLine().ToLower();
@@ -34,7 +34,7 @@ while (playerHand.GetValue() < 21)
     }
     else
     {
-        Console.WriteLine("Please enter only 'stick', 'twist', or 'exit");
+        Console.WriteLine("Please enter only 'stick', 'twist', or 'exit' only");
     }
 }
 
@@ -43,7 +43,7 @@ if (playerHand.GetValue() > 21)
     Console.WriteLine("You went over 21");
     Console.WriteLine("Your hand: " + playerHand);
 }
-else if (playerHand.GetValue() > dealerHand.GetValue())
+else if (playerHand.GetValue() > dealerHand.GetValue() || (dealerHand.GetValue() > 21 && playerHand.GetValue() < 21))
 {
     Console.WriteLine("You won!");
     Console.WriteLine("Your hand: " + playerHand);
@@ -51,7 +51,7 @@ else if (playerHand.GetValue() > dealerHand.GetValue())
 }
 else
 {
-    Console.WriteLine("The dealer won");
+    Console.WriteLine("The dealer has won.");
     Console.WriteLine("Your hand: " + playerHand);
     Console.WriteLine("Dealer hand: " + dealerHand);
 }
