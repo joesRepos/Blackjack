@@ -26,7 +26,12 @@ while (playerHand.GetValue() < 21 && dealerHand.GetValue() < 21)
     else if (input == "twist")
     {
         playerHand.AddCard(deck.Draw());
+        if (dealerHand.GetValue() < 21)
+        {
+            dealerHand.AddCard(deck.Draw());
+        }
         Console.WriteLine("Your hand: " + playerHand);
+        Console.WriteLine("Dealer hand: " + dealerHand);
     }
     else if (input == "stick")
     {
