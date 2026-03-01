@@ -6,8 +6,10 @@ public class Deck
     private List<Card> cards = new List<Card>();
     private Random random = new Random();
 
+    // Constructor.
     public Deck()
     {
+        // All possible suits and ranks.
         string[] suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
         string[] ranks = 
         { 
@@ -15,6 +17,7 @@ public class Deck
             "Jack", "Queen", "King", "Ace"
         };
 
+        // Constructs the deck unshuffled.
         foreach (var suit in suits)
         {
             foreach (var rank in ranks)
@@ -24,6 +27,7 @@ public class Deck
         }
     }
 
+    // Shuffle the deck.
     public void Shuffle()
     {
         for (int i = 0; i < cards.Count; i++)
@@ -33,6 +37,7 @@ public class Deck
         }
     }
 
+    // Draw a card from the deck.
     public Card Draw()
     {
         Card topCard = cards[0];
