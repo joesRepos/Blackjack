@@ -3,13 +3,16 @@ using System.Linq;
 
 public class Hand
 {
+    // Array list of Card.
     public List<Card> Cards { get; } = new List<Card>();
 
+    // Add a new card to the hand.
     public void AddCard(Card card)
     {
         Cards.Add(card);
     }
 
+    // Get the numeric value of the hnd.
     public int GetValue()
     {
         int total = Cards.Sum(c => c.Value);
@@ -25,6 +28,7 @@ public class Hand
         return total;
     }
 
+    // Returns the string representation of the hand.
     public override string ToString()
     {
         return string.Join(", ", Cards);
