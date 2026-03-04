@@ -22,7 +22,7 @@ while (playerHand.GetValue() < 21 && dealerHand.GetValue() < 21)
     string input = Console.ReadLine().ToLower();
 
     // Exit command.
-    if (input == "exit")
+    if (input == "exit" || input == "stick")
     {
         break;
     }
@@ -37,10 +37,6 @@ while (playerHand.GetValue() < 21 && dealerHand.GetValue() < 21)
         }
         Console.WriteLine("Your hand: " + playerHand);
         Console.WriteLine("Dealer hand: " + dealerHand);
-    }
-    else if (input == "stick")
-    {
-        break;
     }
     else
     {
