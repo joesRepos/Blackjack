@@ -13,7 +13,7 @@ dealerHand.AddCard(deck.Draw());
 // First round display.
 Console.WriteLine("Welcome to Blackjack!");
 Console.WriteLine("Your hand: " + playerHand);
-Console.WriteLine("Dealear's shows: " + dealerHand.Cards[0]);
+Console.WriteLine("Dealear's shown hand: " + dealerHand.Cards[0]);
 
 // Loop while both can play.
 while (playerHand.GetValue() < 21 && dealerHand.GetValue() < 21)
@@ -36,7 +36,7 @@ while (playerHand.GetValue() < 21 && dealerHand.GetValue() < 21)
             dealerHand.AddCard(deck.Draw());
         }
         Console.WriteLine("Your hand: " + playerHand);
-        Console.WriteLine("Dealer hand: " + dealerHand);
+        Console.WriteLine("Dealer shown hand: " + dealerHand);
     }
     else
     {
@@ -48,7 +48,7 @@ while (playerHand.GetValue() < 21 && dealerHand.GetValue() < 21)
 // Player hand too large condition.
 if (playerHand.GetValue() > 21)
 {
-    Console.WriteLine("You went over 21");
+    Console.WriteLine("You went over 21 and have lost.");
     Console.WriteLine("Your hand: " + playerHand);
 }
 // Player win condition.
@@ -56,15 +56,15 @@ else if (playerHand.GetValue() > dealerHand.GetValue() || (dealerHand.GetValue()
 {
     Console.WriteLine("You won!");
     Console.WriteLine("Your hand: " + playerHand);
-    Console.WriteLine("Dealer hand: " + dealerHand);
+    Console.WriteLine("Dealer's full hand: " + dealerHand);
 }
 // Dealer wins condtion.
 else
 {
-    Console.WriteLine("The dealer has won.");
+    Console.WriteLine("The dealer has won, you have lost.");
     Console.WriteLine("Your hand: " + playerHand);
-    Console.WriteLine("Dealer hand: " + dealerHand);
-    Console.WriteLine("House alwasy wins.");
+    Console.WriteLine("Dealer's full hand: " + dealerHand);
+    Console.WriteLine("House always wins.");
 }
 
 Console.WriteLine("Game Over.");
