@@ -13,7 +13,7 @@ dealerHand.AddCard(deck.Draw());
 // First round display.
 Console.WriteLine("Welcome to Blackjack!");
 Console.WriteLine("Your hand: " + playerHand);
-Console.WriteLine("Dealear's shown hand: " + dealerHand.Cards[0]);
+Console.WriteLine("Dealear's shown hand: " + dealerHand.Cards[^1]);
 
 // Loop while both can play.
 while (playerHand.GetValue() < 21 && dealerHand.GetValue() < 21)
@@ -36,7 +36,7 @@ while (playerHand.GetValue() < 21 && dealerHand.GetValue() < 21)
             dealerHand.AddCard(deck.Draw());
         }
         Console.WriteLine("Your hand: " + playerHand);
-        Console.WriteLine("Dealer shown hand: " + dealerHand);
+        Console.WriteLine("Dealer shown hand: " + dealerHand.Cards[^1]);
     }
     else
     {
